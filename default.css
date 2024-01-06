@@ -1,11 +1,31 @@
+
+/* 代码框，加上虚线 */
+:not(pre) > code[class*="language-"], pre[class*="language-"] {
+    background: var(--code-background);
+    border-style: dashed;
+    border-color: #dad9d9;
+}
+
+/* 有链接的字体修改 */
 .markdown-source-view.mod-cm6.is-live-preview .cm-hashtag.cm-meta, .markdown-source-view.mod-cm6 .cm-hmd-internal-link .cm-underline, .markdown-source-view.mod-cm6 .cm-link .cm-underline, .markdown-source-view.mod-cm6 .cm-url .cm-underline {
-    font-family: 'Cascadia', 'Yuanti SC';
+    cursor: var(--cursor-link);
+    font-family: 'Linux Biolinum';
+}
+
+.external-link {
+    font-family: 'Linux Biolinum';
+}
+
+/* 侧边栏字体 */
+.nav-file-title-content, .nav-folder-title-content {
+    font-family: 'Cascadia';
+}
 
 /* --------------------------------图片-------------------------------- */
 
 .internal-embed img:not([width]), .internal-embed audio, .internal-embed video {
     /*box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 5px 0px, rgba(0, 0, 0, 0.1) 0px 0px 1px 0px;*/
-    max-width: 70%;
+    max-width: 85%;
     right: -50%;
     position: relative;
     transform: translateX(-50%);
@@ -18,13 +38,30 @@ img {
 }
 
 
-/* ---------------------------------------------------------------------- */
 
 
+/* 字体改颜色，粗体，斜体 */
 .cm-strong {
     font-weight: var(--bold-weight);
     color: #8B6CEF;
 }
+
+b, strong {
+    font-weight: var(--bold-weight);
+    color: #8B6CEF;
+}
+
+.cm-em {
+    font-style: italic;
+    color: #8B6CEF;
+}
+
+
+i, em {
+    font-style: italic;
+    color: #8B6CEF;
+}
+/* ---------------------------------------------------------------------- */
 
 .markdown-source-view.mod-cm6 hr {
 	border: 0;
@@ -50,6 +87,13 @@ img {
     vertical-align: baseline;
     border-radius: 6px;
 }
+
+.markdown-rendered code {
+    color: #e84060;
+    background-color: #d27aaa24;
+}
+
+
 /* ---------------------------------------------------------------------- */
 
 
@@ -72,39 +116,6 @@ h2, .markdown-rendered h2 {
 .HyperMD-header-2, .inline-title[data-level='2'], .HyperMD-list-line .cm-header-2 {
     line-height: 2;
 }
-
-}
-/* --------------------------------引用块---------------- */
-.markdown-rendered blockquote {
-    color: #646464a8;
-    font-style: var(--blockquote-font-style);
-    background-color: #f9f9f9;
-    border-left: 5px solid #adbdc9;
-    padding: 0 0 0 var(--size-4-6);
-    border-radius: 10px;
-    font-family: "LXGW WenKai";
-    margin-inline-start: 0;
-    margin-inline-end: 0;
-}
-
-.markdown-source-view.mod-cm6.is-live-preview .HyperMD-quote {
-    color: #646464a8;
-    font-style: var(--blockquote-style);
-    background-color: #f9f9f9;
-    border-radius: 10px;
-    font-family: "LXGW WenKai";
-}
-
-.markdown-source-view.mod-cm6.is-live-preview .HyperMD-quote:before, .markdown-source-view.mod-cm6 .cm-blockquote-border:before {
-    content: "\200b";
-    display: block;
-    width: 1px;
-    border-left: 5px solid #adbdc9;
-    position: absolute;
-    top: 0;
-    bottom: 0;
-}
-/* -------------------------------------------------------------------------------------------------- */
 
 
 /* -----------------------callout--------------------------- */
@@ -174,4 +185,31 @@ h2, .markdown-rendered h2 {
     /*background-color: var(--table-row-alt-background);*/
     background: #F8F8F8;
   }
-  /* ------------------------------------------------------------------- */
+
+
+/* 引用块 */
+.markdown-source-view.mod-cm6.is-live-preview .HyperMD-quote {
+    color: #646464a8;
+    font-style: var(--blockquote-style);
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    font-family: "LXGW WenKai";
+}
+
+.markdown-source-view.mod-cm6.is-live-preview .HyperMD-quote:before, .markdown-source-view.mod-cm6 .cm-blockquote-border:before {
+    content: "\200b";
+    display: block;
+    width: 1px;
+    border-left: 5px solid #adbdc9;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+}
+
+.markdown-rendered blockquote {
+    color: #646464a8;
+    background-color: #f9f9f9;
+    border-left: 5px solid #adbdc9;
+    border-radius: 10px;
+    font-family: "LXGW WenKai";
+}
